@@ -3,15 +3,17 @@ function getValues() {
   // get user inputs from the page
 let firstNumber = document.getElementById('firstNumber').value;
 let secondNumber = document.getElementById('secondNumber').value;
+let stopNumber = document.getElementById('stopNumber').value;
 
 // parse inputs as numbers 
 firstNumber = parseInt(firstNumber);
 secondNumber = parseInt(secondNumber);
+stopNumber = parseInt(stopNumber);
 
 // validate inputs are numbers 
-  if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber)) {
+  if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(stopNumber)) {
     // if they are, generate numbers
-    let numbersArray = generateSodaPop();
+    let numbersArray = generateSodaPop(stopNumber);
     // then display
     displaySodaPop(numbersArray, firstNumber, secondNumber);
   }else {
@@ -29,12 +31,12 @@ secondNumber = parseInt(secondNumber);
 }
 
 // Logic function
-function generateSodaPop() {
+function generateSodaPop(stop) {
   // generate numbers 1-100
   let numberList = [];
 
 
-  for(i = 1; i <= 100; i++) {
+  for(i = 1; i <= stop; i++) {
     numberList.push(i);
   }
   
@@ -53,15 +55,19 @@ function displaySodaPop(arrayOfNumbers,first, second) {
     let divisibleByFirst = "soda";
     let divisibleBySecond = "pop";
     let divisibleByBoth = "sodapop";
+    let className = value % first == 0 && value % second !== 0 ? "soda" 
+    : value % first !== 0 && value % second == 0 ? "pop" 
+    : value % first == 0 && value % second == 0 ? "sodapop"
+    : "";
 
     let tableRow = "";
 
     if (value % first == 0 && value % second == 0) {
-     tableRow = `<tr><td>${divisibleByBoth}</td></tr>`;
+     tableRow = `<tr><td class=${className}>${divisibleByBoth}</td></tr>`;
     }else if(value % first == 0 && value % second !== 0) {
-      tableRow = `<tr><td>${divisibleByFirst}</td></tr>`;
+      tableRow = `<tr><td class=${className}>${divisibleByFirst}</td></tr>`;
     }else if(value % first !== 0 && value % second == 0) {
-      tableRow = `<tr><td>${divisibleBySecond}</td></tr>`;
+      tableRow = `<tr><td class=${className}>${divisibleBySecond}</td></tr>`;
     }
     else {
       tableRow = `<tr><td>${value}</td></tr>`;

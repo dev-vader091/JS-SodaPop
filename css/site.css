@@ -84,4 +84,16 @@ footer {
   padding-left: 0.5rem;
 }
 
+.soda {
+  color: red !important;
+}
+
+.pop {
+  color: blue !important;
+}
+
+.sodapop {
+  color: green !important;
+}
+
 /* END: Main Content Styles */

@@ -79,12 +79,18 @@
       <div class="col">
         <form action="#" class="row gy-2 gx-3">
           <div class="col">
-            <input type="text" id="firstNumber" class="form-control" placeholder="First Number"
+            <label for="firstNumber" class="form-label">Soda value</label>
+            <input type="text" id="firstNumber" class="form-control" placeholder="Soda value"
               aria-label="Starting Value" value="3">
           </div>
           <div class="col">
-            <input type="text" id="secondNumber" class="form-control" placeholder="Second Number" aria-label="Ending Value"
+            <label for="secondNumber" class="form-label">Pop value</label>
+            <input type="text" id="secondNumber" class="form-control" placeholder="Pop value" aria-label="Ending Value"
               value="5">
+          </div>
+          <div class="col">
+            <label for="stopValue" class="form-label">Stop value</label>
+            <input type="text" id="stopNumber" class="form-control" placeholder="Stop value" value="100">
           </div>
           <div class="col-12 d-flex justify-content-end">
             <button id="btnSubmit" class="btn btn-dark btn-lg" type="button">SodaPop</button>
