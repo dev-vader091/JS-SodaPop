@@ -11,12 +11,22 @@ secondNumber = parseInt(secondNumber);
 stopNumber = parseInt(stopNumber);
 
 // validate inputs are numbers 
-  if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(stopNumber)) {
+  if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(stopNumber) && stopNumber < 5000) {
     // if they are, generate numbers
     let numbersArray = generateSodaPop(stopNumber);
     // then display
     displaySodaPop(numbersArray, firstNumber, secondNumber);
-  }else {
+  }
+  else if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(stopNumber) && stopNumber > 5000) {
+    Swal.fire(
+      {
+        icon: 'error',
+        title: 'Oops',
+        text: 'Please enter a number less than 5,000.'
+      }
+    );
+  }
+  else {
     // if not, alert requesting numbers only
     Swal.fire(
       {
