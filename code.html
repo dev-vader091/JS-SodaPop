@@ -78,16 +78,16 @@
           <code class="language-js">
             function getValues() {
               // get user inputs from the page
-            let firstNumber = document.getElementById('firstNumber').value;
-            let secondNumber = document.getElementById('secondNumber').value;
-            let stopNumber = document.getElementById('stopNumber').value;
+              let firstNumber = document.getElementById('firstNumber').value;
+              let secondNumber = document.getElementById('secondNumber').value;
+              let stopNumber = document.getElementById('stopNumber').value;
             
-            // parse inputs as numbers 
-            firstNumber = parseInt(firstNumber);
-            secondNumber = parseInt(secondNumber);
-            stopNumber = parseInt(stopNumber);
+              // parse inputs as numbers 
+              firstNumber = parseInt(firstNumber);
+              secondNumber = parseInt(secondNumber);
+              stopNumber = parseInt(stopNumber);
             
-            // validate inputs are numbers 
+              // validate inputs are numbers 
               if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(stopNumber) && stopNumber < 5000) {
                 // if they are, generate numbers in logic function using stop number as parameter
                 let numbersArray = generateSodaPop(stopNumber);
