@@ -189,11 +189,32 @@
       </div>
       <div class="col-12 col-lg-4">
         <h5 class="fs-2 fw-bold pb-3"><code>getValues()</code></h5>
-        <p>This function displays the message in a Sweet Alert.</p>
+        <p>The user inputs are received from the UI and the values assigned to variables. Next, these inputs are
+          converted to numbers using parseInt().
+          Next, using an if statement, the numbers are validated to verify they are integers and that the stop number is
+          less than 5000. If these conditions are true, variable <strong>numbersArray</strong> is assigned the
+          controller function as a
+          value using the variable <strong>stopNumber</strong> as the parameter.
+          If the stop number is greater the 5000, display alert asking for a number less than 5000.
+          The display function is then called using the resulting array from the controller function as well the first
+          two user inputs, <strong>firstNumber</strong> and <strong>secondNumber</strong> as parameters.
+        </p>
         <h5 class="fs-2 fw-bold pb-3"><code>generateSodaPop(stop)</code></h5>
-        <p>This function displays the message in a Sweet Alert.</p>
+        <p>First, initialize an empty array variable, <strong>numberList</strong>. The members of this array will be the
+          numbers from 1 to the stop value. Next, using a for loop, the numbers a generated, adding the current number
+          to the array in each iteration.
+          After the loop, the function returns the array of numbers.
+        </p>
         <h5 class="fs-2 fw-bold pb-3"><code>displaySodaPop(arrayOfNumbers,first, second)</code></h5>
-        <p>This function displays the message in a Sweet Alert.</p>
+        <p>First the table element is obtained from the document and made a variable, <strong>tableBody</strong>. Next,
+          a variable <strong>tableHtml</strong> is initialized to hold the html to be added to the table body. In a for
+          loop, using the array's length as the condition, iterate through each number.
+          In each iteration, a class is added to the number and a variable, <strong>tableRow</strong> is initialized
+          to hold the number's html and if each meets one of the conditions set in the loop, the class is added to
+          the table data item and the row is then added to the <strong>tableHtml</strong> element.
+          After the loop is complete, the <strong>tableHtml</strong> is added to the element <strong>tableBody</strong>,
+          displaying the completed table to the user.
+        </p>
       </div>
     </div>
   </main>
